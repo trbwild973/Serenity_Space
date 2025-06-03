@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="logo.png" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Serenity Space - Self-Help Tools</title>
+  <style>
+    body {
+      background-color: #F7F4F1;
+      color: #4B3F3B;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      position: relative;
+      background-color: #A7C4BC;
+      color: #F7F4F1;
+      text-align: center;
+      padding: 50px 20px 20px;
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      font-size: 2.8rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+    }
+
+    header img {
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      transform: translateY(-50%);
+      width: 60px;
+      height: auto;
+      border-radius: 20px;
+    }
+
+    nav {
+      background-color: #C9DBD1;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 15px 0;
+      margin: 30px auto;
+      width: 90%;
+      border-radius: 30px;
+      box-shadow: 0 6px 18px rgba(150, 170, 160, 0.4);
+    }
+
+    nav a {
+      color: #4B3F3B;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.2rem;
+      padding: 12px 28px;
+      border-radius: 20px;
+      background-color: #E9DED5;
+      box-shadow: 0 4px 12px rgba(120, 110, 100, 0.15);
+      transition: background-color 0.35s ease, color 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .current {
+      background-color: #ccb8a7;
+    }
+
+    nav a:hover {
+      background-color: #9EB8AA;
+      color: #FFFFFF;
+      box-shadow: 0 6px 14px rgba(100, 120, 110, 0.4);
+    }
+
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 30px 40px;
+      background-color: #FEF8F4;
+      border-radius: 30px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.07);
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #5A5048;
+      border-bottom: 2px solid #D6CCC2;
+      padding-bottom: 5px;
+    }
+
+    .tool-section {
+      margin-bottom: 40px;
+    }
+
+    .mood-buttons button {
+      margin: 5px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      background-color: #A7C4BC;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .mood-buttons button:hover {
+      background-color: #91B2A6;
+    }
+
+    textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 15px;
+      border-radius: 10px;
+      border: 1px solid #D0CFCB;
+      font-size: 16px;
+      background-color: #FAF7F5;
+      color: #4B3F3B;
+      resize: vertical;
+    }
+
+    #breathe-box {
+      text-align: center;
+      padding: 20px;
+      background-color: #E9DED5;
+      border-radius: 20px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #5A5048;
+      margin-top: 15px;
+      animation: breathe 8s infinite;
+    }
+
+    @keyframes breathe {
+      0% { transform: scale(1); opacity: 1; }
+      25% { transform: scale(1.2); opacity: 0.8; }
+      50% { transform: scale(1); opacity: 1; }
+      75% { transform: scale(0.9); opacity: 0.9; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .affirmation-box {
+      margin-top: 15px;
+      background-color: #D6CCC2;
+      padding: 15px;
+      border-radius: 15px;
+      text-align: center;
+      font-style: italic;
+      font-size: 1.2rem;
+    }
+
+    .grounding-list li {
+      margin: 8px 0;
+    }
+
+    button.generate-btn {
+      background-color: #A7C4BC;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button.generate-btn:hover {
+      background-color: #91B2A6;
+    }
+
+    footer {
+      background-color: #A7C4BC;
+      color: #F7F4F1;
+      text-align: center;
+      padding: 20px 10px;
+      border-top-left-radius: 40px;
+      border-top-right-radius: 40px;
+      box-shadow: 0 -8px 20px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <header><img src="logo.png">Serenity Space</header>
+  <nav>
+    <a href="about.html">About</a>
+    <a href="tools.html" class="current">Self-Help Tools</a>
+    <a href="resources.html">Resources</a>
+    <a href="facts.html">Mental Health Facts</a>
+    <a href="tips.html">Tips & Advice</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <main>
+    <section class="tool-section">
+      <h2>Mood Tracker</h2>
+      <div class="mood-buttons">
+        <button onclick="setMood('Happy')">😊 Happy</button>
+        <button onclick="setMood('Sad')">😢 Sad</button>
+        <button onclick="setMood('Anxious')">😟 Anxious</button>
+        <button onclick="setMood('Angry')">😠 Angry</button>
+        <button onclick="setMood('Calm')">😌 Calm</button>
+      </div>
+      <textarea id="moodNote" placeholder="Write about why you feel this way..."></textarea>
+    </section>
+
+    <section class="tool-section">
+      <h2>Breathing Exercise</h2>
+      <div id="breathe-box">Breathe In... Breathe Out...</div>
+    </section>
+
+    <section class="tool-section">
+      <h2>Daily Affirmation</h2>
+      <button class="generate-btn" onclick="generateAffirmation()">Show Me an Affirmation</button>
+      <div class="affirmation-box" id="affirmationBox">Your affirmation will appear here.</div>
+    </section>
+
+    <section class="tool-section">
+      <h2>5-4-3-2-1 Grounding Exercise</h2>
+      <ul class="grounding-list">
+        <li><strong>5</strong> things you can see</li>
+        <li><strong>4</strong> things you can touch</li>
+        <li><strong>3</strong> things you can hear</li>
+        <li><strong>2</strong> things you can smell</li>
+        <li><strong>1</strong> thing you can taste</li>
+      </ul>
+      <p>Take your time and notice each one fully. This technique helps bring your awareness back to the present moment.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Serenity Space - A Place for Peace and Support</p>
+  </footer>
+
+  <script>
+    function setMood(mood) {
+      document.getElementById('moodNote').value = `Today, I feel ${mood.toLowerCase()} because...`;
+    }
+
+    function generateAffirmation() {
+      const affirmations = [
+        "I am doing my best, and that is enough.",
+        "I am in charge of how I feel today.",
+        "I am calm, I am strong, I am centered.",
+        "I choose peace over worry.",
+        "I am proud of how far I’ve come.",
+        "This feeling is temporary. I am resilient.",
+        "I believe in myself and my abilities."
+      ];
+      const random = affirmations[Math.floor(Math.random() * affirmations.length)];
+      document.getElementById('affirmationBox').innerText = random;
+    }
+  </script>
+</body>
+</html>
